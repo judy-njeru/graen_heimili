@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Grænt Heimili</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+    <!-- fontawesome core CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles -->
+    <link href="css/styles.css" rel="stylesheet">
+
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  </head>
+<body id="homepage">
+  <header>
+    <nav class="navbar navbar-inverse container">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <div class="logo ">
+            <a href="http://localhost:8000/">
+              <img src="assets/images/logo.png" alt="logo">
+            </a>
+          </div>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <div class="burger_menu">
+            <div class="button_container" id="toggle">
+              <span class="top"></span>
+              <span class="middle"></span>
+              <span class="bottom"></span>
+            </div>
+
+            <div class="overlay" id="overlay">
+              <nav class="overlay-menu">
+                <ul>
+                  <li><a href="#about_games">Um listann</a></li>
+                  <li><a href="#education">Fræðslumolar</a></li>
+                  <li><a href="#partners">Samstarfsaðilar</a></li>
+                  <li><a href="https://localhost:8000/about.html">Um okkur</a></li>
+                  <li id="login"><a href="#about_us">Innskráning</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- <div class="container"> -->
+  <!-- <h1>CSS Mask Demos: only working on Webkit browsers</h1> -->
+  <div class="container">
+    <div class="row">
+      <div class="luminance-mask">
+        <img class="target luminance-target" src="assets/images/home-banner.jpeg" alt="Masked image">
+      </div>
+      <div class="row banner-headline">
+        <div class="col-xl-12 col-lg-12 col-md-12">
+          <h1>Taktu þátt í að gera heimilið þitt umhverfisvænt</h1>
+        </div>
+      </div>
+      <div class="row support-text">
+        <div class="col-xl-9 col-lg-9 col-md-8">
+          <h3>
+            Vilt þú taka þig til og uppfærðu heimilið í stíl við umhverfisvæna hugsun? Svaraðu nokkrum spurningum og við útbúum sérstakan tékklista fyrir þig til að hjálpa þér að byrja!
+          </h3>
+        </div>
+      </div>
+      <div class="row start-button">
+        <div class="col-7 col-md-6">
+          <div>
+            <a class="next_button btn-lg" href="#login_popup">Byrjaðu núna</a>
+          </div>
+
+          <div id="login_popup" class="login_overlay">
+            <div class="login_popup">
+              <a class="close" href="#">&times;</a>
+              <div class="content">
+                <div class="login_type_selection">
+                  <p>
+                    <a class=" login_type button-one" id="new_login" title="New Login" onclick="newUserLogin()">Nýskráning</a>
+                    <a class="login_type button-two" id="login" title="Login" onclick="Login()">Innskráning</a>
+                  </p>
+                  <p>Skráðu þig í gegnum samfélagsmiðla</p>
+                  <p>Til þess að fá aðgang að tékklistanum þínum þá þarftu að vera innskráður</p>
+                </div>
+                <div id="login_options">
+                  <div class="user_login">
+                    <button class="social-button" id="facebook-connect">
+                      Skráðu þig inn með Facebook
+                    </button>
+                    <button class="social-button" id="google-connect">
+                      Skráðu þig inn með Google
+                    </button>
+                    <button class="social-button" id="twitter-connect">
+                      Skráðu þig inn með Twitter
+                    </button>
+                  </div>
+                </div>
+                <p class="choice" id="choice">EÐA</p>
+                <a id="skip_login" href='https://localhost:8000/home_types.html'>
+                  <p class="choice_1" id="choice_1">Skráðu þig inn á eftir</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="share-social">
+          <a class="social overlay_icon" href="https://pinterest.com">
+            <i class="fa fa-pinterest"></i>
+          </a>
+          <a class="social overlay_icon" href="https://facebook.com">
+            <i class="fa fa-facebook"></i>
+          </a>
+          <a class="social overlay_icon" href="https://twitter.com">
+            <i class="fa fa-twitter"></i>
+          </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <!-- Custom script file -->
+  <script src="js/dependencies.js"></script>
+  <script src="js/authentication.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
